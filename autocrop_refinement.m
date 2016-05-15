@@ -4,20 +4,20 @@ function autocrop_refinement
 %crop them the second time
 
 %the directory of the dataset
-folders = dir('/home/gc7xv/Desktop/Result3_1/*');
+folders = dir('/home/gc7xv/Desktop/Result/*');
 nfolders = length(folders);
 
 for aa = 3:nfolders
     currentfoldername = folders(aa).name
 
-    files = dir(fullfile('/home/gc7xv/Desktop/Result3_1/',currentfoldername,'*.jpg'));
+    files = dir(fullfile('/home/gc7xv/Desktop/Result/',currentfoldername,'*.jpg'));
     nfiles = length(files);
 
     area = [1:nfiles];
     
     for ii = 1:nfiles
         currentfilename = strcat(num2str(ii),'.jpg');
-        A = imread(fullfile('/home/gc7xv/Desktop/Result3_1/', currentfoldername, currentfilename)) ;
+        A = imread(fullfile('/home/gc7xv/Desktop/Result/', currentfoldername, currentfilename)) ;
         [a,b,c] = size(A);
         area(ii) = a*b;
     end
@@ -26,7 +26,7 @@ for aa = 3:nfolders
     
     for jj = 1:nfiles
         currentfilename = strcat(num2str(jj),'.jpg');
-        A = imread(fullfile('/home/gc7xv/Desktop/Result3_1/', currentfoldername, currentfilename)) ;
+        A = imread(fullfile('/home/gc7xv/Desktop/Result/', currentfoldername, currentfilename)) ;
         [a,b,c] = size(A);
         if a*b > 1.8*medianNumber
             
@@ -35,7 +35,7 @@ for aa = 3:nfolders
             [yvalue,xvalue,zvalue] = size(N);
             imshow(N);
 
-            filepath = fullfile('/home/gc7xv/Desktop/Result3_1/',currentfoldername);
+            filepath = fullfile('/home/gc7xv/Desktop/Result/',currentfoldername);
             
             set(gcf,'resize','off');
             set(gcf,'position',[0,0,yvalue,xvalue]);
