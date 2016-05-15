@@ -4,20 +4,20 @@ function autocrop_refinement
 %crop them the second time
 
 %the directory of the dataset
-folders = dir('/home/gc7xv/Desktop/Result/*');
+folders = dir('/Users/guanyuchen/Desktop/Image Classification/Image_Autocrop/Result/*');
 nfolders = length(folders);
 
 for aa = 3:nfolders
     currentfoldername = folders(aa).name
 
-    files = dir(fullfile('/home/gc7xv/Desktop/Result/',currentfoldername,'*.jpg'));
+    files = dir(fullfile('/Users/guanyuchen/Desktop/Image Classification/Image_Autocrop/Result/',currentfoldername,'*.jpg'));
     nfiles = length(files);
 
     area = [1:nfiles];
     
     for ii = 1:nfiles
         currentfilename = strcat(num2str(ii),'.jpg');
-        A = imread(fullfile('/home/gc7xv/Desktop/Result/', currentfoldername, currentfilename)) ;
+        A = imread(fullfile('/Users/guanyuchen/Desktop/Image Classification/Image_Autocrop/Result/', currentfoldername, currentfilename)) ;
         [a,b,c] = size(A);
         area(ii) = a*b;
     end
@@ -35,7 +35,7 @@ for aa = 3:nfolders
             [yvalue,xvalue,zvalue] = size(N);
             imshow(N);
 
-            filepath = fullfile('/home/gc7xv/Desktop/Result/',currentfoldername);
+            filepath = fullfile('/Users/guanyuchen/Desktop/Image Classification/Image_Autocrop/Result/',currentfoldername);
             
             set(gcf,'resize','off');
             set(gcf,'position',[0,0,yvalue,xvalue]);
