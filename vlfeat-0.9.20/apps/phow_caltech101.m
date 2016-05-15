@@ -51,12 +51,12 @@ function phow_caltech101()
 % This file is part of the VLFeat library and is made available under
 % the terms of the BSD license (see the COPYING file).
 
-conf.calDir = '/Users/guanyuchen/Desktop/Image Classification/Image_Autocrop/Result/' ;
-conf.dataDir = '/Users/guanyuchen/Desktop/Image Classification/Image_Autocrop/phow_hist/' ;
-conf.autoDownloadData = false ;
+conf.calDir = 'data/caltech-101' ;
+conf.dataDir = 'data/' ;
+conf.autoDownloadData = true ;
 conf.numTrain = 15 ;
 conf.numTest = 15 ;
-conf.numClasses = 9 ;
+conf.numClasses = 102 ;
 conf.numWords = 600 ;
 conf.numSpatialX = [2 4] ;
 conf.numSpatialY = [2 4] ;
@@ -69,7 +69,7 @@ conf.svm.solver = 'sdca' ;
 
 conf.svm.biasMultiplier = 1 ;
 conf.phowOpts = {'Step', 3} ;
-conf.clobber = true ;   % reset data each time
+conf.clobber = false ;
 conf.tinyProblem = true ;
 conf.prefix = 'baseline' ;
 conf.randSeed = 1 ;
@@ -96,7 +96,6 @@ vl_twister('state',conf.randSeed) ;
 %                                            Download Caltech-101 data
 % --------------------------------------------------------------------
 
-%{
 if ~exist(conf.calDir, 'dir') || ...
    (~exist(fullfile(conf.calDir, 'airplanes'),'dir') && ...
     ~exist(fullfile(conf.calDir, '101_ObjectCategories', 'airplanes')))
@@ -115,7 +114,6 @@ end
 if ~exist(fullfile(conf.calDir, 'airplanes'),'dir')
   conf.calDir = fullfile(conf.calDir, '101_ObjectCategories') ;
 end
-%}
 
 % --------------------------------------------------------------------
 %                                                           Setup data
