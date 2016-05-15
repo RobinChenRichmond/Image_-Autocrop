@@ -4,7 +4,7 @@ function autocrop
 %their backgrounds and then locating the largest part in the image
 
 %choose the path of the folder
-folders = dir('/home/gc7xv/Desktop/Image Classification/training/*');
+folders = dir('guanyuchen/*');
 
 nfolders = length(folders);
 
