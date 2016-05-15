@@ -26,7 +26,7 @@ for aa = 3:nfolders
     
     for jj = 1:nfiles
         currentfilename = strcat(num2str(jj),'.jpg');
-        A = imread(fullfile('/home/gc7xv/Desktop/Result/', currentfoldername, currentfilename)) ;
+        A = imread(fullfile('/Users/guanyuchen/Desktop/Image Classification/Image_Autocrop/Result/', currentfoldername, currentfilename)) ;
         [a,b,c] = size(A);
         if a*b > 1.8*medianNumber
             
