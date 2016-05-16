@@ -2,7 +2,7 @@
 
 This is an autocrop preprocessiong algorithm runs in matlab environment. It helps crop the bird images in green background in the given dataset.
 
-Prerequisite: To test the actual result of the accuracy of dataset, you need to install the ([vlfeat toolbox](http://www.vlfeat.org/download.html)) and then run phow_caltech 101 on both datasets(before and after autocrop).
+Prerequisite: To test the actual result of the accuracy of dataset, you need to install the [vlfeat toolbox](http://www.vlfeat.org/download.html) and then run phow_caltech 101 on both datasets(before and after autocrop).
 
 This algorithm works in a more straight forward way than the image division algorithm, which divide the images by backgrounds. Just run the autocrop and the results will be saved in the given path. Attention: You need to create all folders for the outputs. There’re 3 steps in this algorithm: the first step removes most of the pixels in the background by the definition, the second step makes a copy of the image, changes the copy into binary image, and gets the largest area, and the third step gets the needed boundary parameters from the binary and uses these parameters to crop the target in the original image.
 
